@@ -1,0 +1,186 @@
+/* Reviews Styles */
+.reviews-summary {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.review-form-section {
+    max-width: 600px;
+    margin: 24px auto;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.review-list {
+    margin-top: 24px;
+}
+
+.review-item {
+    width: 100%;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.review-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.review-date {
+    font-size: 12px;
+}
+
+.review-content {
+    margin-left: 48px;
+}
+
+.review-item .ant-rate {
+    font-size: 14px;
+}
+
+/* Form Styles */
+.ant-form-item-label > label {
+    color: #333;
+    font-weight: 500;
+}
+
+.ant-form .ant-rate {
+    font-size: 24px;
+}
+
+.ant-input-textarea {
+    border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .review-form-section {
+        padding: 16px;
+    }
+
+    .review-header {
+        flex-wrap: wrap;
+    }
+
+    .review-content {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+}
+.size-guide-drawer .ant-drawer-content-wrapper {
+    max-width: 100%;
+}
+
+.size-guide-content {
+    padding: 0 16px;
+}
+
+.guide-section {
+    margin-bottom: 24px;
+}
+
+.guide-section h4 {
+    margin-bottom: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.guide-image {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.guide-image:hover {
+    transform: scale(1.02);
+}
+
+.size-notes {
+    background: #fff9fb;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 24px;
+}
+
+.size-notes h5 {
+    color: #ff66b2;
+    margin-bottom: 12px;
+}
+
+.notes-list {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.notes-list li {
+    margin-bottom: 8px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.ant-divider {
+    margin: 24px 0;
+}
+
+/* Custom scrollbar */
+.size-guide-drawer .ant-drawer-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.size-guide-drawer .ant-drawer-body::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.size-guide-drawer .ant-drawer-body::-webkit-scrollbar-thumb {
+    background: #ff99cc;
+    border-radius: 3px;
+}
+
+.size-guide-drawer .ant-drawer-body::-webkit-scrollbar-thumb:hover {
+    background: #ff66b2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .ant-drawer-content-wrapper {
+        width: 100% !important;
+    }
+
+    .size-guide-content {
+        padding: 0 12px;
+    }
+
+    .guide-image {
+        max-width: 100%;
+    }
+
+    .size-notes {
+        padding: 12px;
+    }
+
+    .notes-list li {
+        font-size: 14px;
+    }
+}

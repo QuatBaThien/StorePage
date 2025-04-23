@@ -1,0 +1,124 @@
+.guide-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.guide-section {
+    margin-bottom: 24px;
+}
+.guide-content .ant-card-body {
+    padding: 0 !important;
+}
+
+
+.safety-alert {
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+.info-alert,
+.warning-alert {
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.size-table {
+    margin-top: 20px;
+}
+
+.instruction-steps {
+    margin-top: 24px;
+}
+
+.warnings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.warning-item {
+    border-radius: 8px;
+}
+
+.care-tips {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.care-tips ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.care-tips li {
+    margin-bottom: 12px;
+    color: #666;
+}
+
+/* Override ant-design styles */
+.ant-steps-item-content {
+    margin-top: 0 !important;
+}
+
+.ant-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ant-card-head-title {
+    font-weight: 600;
+}
+
+.ant-alert {
+    margin-bottom: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .guide-content {
+        padding: 16px;
+    }
+
+    .ant-table {
+        overflow-x: auto;
+    }
+
+    .ant-steps-vertical {
+        padding-left: 0;
+    }
+}
+
+/* Animation */
+.guide-section {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print styles */
+@media print {
+    .guide-content {
+        padding: 0;
+    }
+
+    .ant-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .ant-alert {
+        border: 1px solid #ddd;
+        background-color: #fff !important;
+    }
+}
