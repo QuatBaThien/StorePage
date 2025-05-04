@@ -2,7 +2,7 @@
   "name": "luxury-nails-spa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://QuatBaThien.github.io/luxury-nails-spa",
+  "homepage": "https://QuatBaThien.github.io/StorePage",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
