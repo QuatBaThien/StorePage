@@ -50,7 +50,7 @@
 
 .current-price {
     font-size: 16px;
-    color: #ff66b2 !important;
+    color: #008ad9 !important;
 }
 
 /* Card hover effect */
@@ -60,7 +60,7 @@
 }
 
 .product-card:hover {
-    border-color: #ff66b2;
+    border-color: #008ad9;
     box-shadow: 0 4px 12px rgba(255, 102, 178, 0.15);
 }
 
@@ -105,7 +105,7 @@
 .new-badge {
     top: 10px;
     right: 10px;
-    background-color: #ff66b2;
+    background-color: #008ad9;
     color: white;
 }
 
@@ -268,7 +268,7 @@
 .new-badge {
     top: 12px;
     right: 12px;
-    background: linear-gradient(45deg, #ff66b2, #ff85c0);
+    background: linear-gradient(45deg, #008ad9, #ff85c0);
     color: white;
 }
 
@@ -354,7 +354,7 @@
 
 .current-price {
     font-size: 18px;
-    color: #ff66b2;
+    color: #008ad9;
     font-weight: 600;
 }
 
@@ -378,11 +378,11 @@
     max-width: 1200px; /* Adjust this value based on your layout */
 }
 .ant-pagination-item-active {
-    border-color: #ff66b2;
+    border-color: #008ad9;
 }
 
 .ant-pagination-item-active a {
-    color: #ff66b2;
+    color: #008ad9;
 }
 
 /* Responsive Adjustments */
@@ -508,7 +508,7 @@
 .product-detail-badge.new {
     top: 16px;
     right: 16px;
-    background: linear-gradient(45deg, #ff66b2, #ff85c0);
+    background: linear-gradient(45deg, #008ad9, #ff85c0);
 }
 
 /* Product Info */
@@ -535,7 +535,7 @@
 
 .product-price-detail .current-price {
     font-size: 28px;
-    color: #ff66b2;
+    color: #008ad9;
     font-weight: bold;
 }
 
@@ -570,8 +570,8 @@
 }
 
 .action-buttons .ant-btn-primary {
-    background: #ff66b2;
-    border-color: #ff66b2;
+    background: #008ad9;
+    border-color: #008ad9;
 }
 
 .action-buttons .ant-btn-primary:hover {
@@ -665,7 +665,7 @@
 
 .product-card:hover .product-collection {
     background-color: #ffe6f0;
-    color: #ff66b2;
+    color: #008ad9;
     border-color: #ffcce0;
 }
 

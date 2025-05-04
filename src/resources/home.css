@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     padding: 0 20px;
-    background: linear-gradient(45deg, #ff66b2, #ff99cc, #ff66d9, #ff99cc);
+    background: linear-gradient(45deg, #008ad9, #193665, #ff66d9, #193665);
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
     box-shadow: 0 4px 15px rgba(255, 102, 178, 0.3);
@@ -114,7 +114,7 @@
 /* Footer.css - Enhanced Version */
 
 .footer {
-    background: linear-gradient(45deg, #ff66b2, #ff99cc, #ff66d9, #ff99cc);
+    background: linear-gradient(45deg, #008ad9, #193665, #ff66d9, #193665);
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
     padding: 20px;
@@ -184,7 +184,7 @@
 .social-links a:hover {
     transform: translateY(-5px);
     background-color: white;
-    color: #ff66b2;
+    color: #008ad9;
     box-shadow: 0 5px 15px rgba(255, 102, 178, 0.5);
 }
 
@@ -307,7 +307,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff66b288, #ff99cc88);
+    background: linear-gradient(45deg, #008ad988, #19366588);
     z-index: 0;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .welcome-section h2 {
-    color: #ff66b2;
+    color: #008ad9;
     margin-bottom: 20px;
     font-weight: 600;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -395,7 +395,7 @@
 }
 
 .service-card .ant-card-meta-title {
-    color: #ff66b2;
+    color: #008ad9;
     font-size: 18px;
     transition: color 0.3s ease;
     height: auto; /* Let title take its natural height */
@@ -413,13 +413,13 @@
 }
 
 .service-card:hover .ant-card-meta-title {
-    color: #ff4da6;
+    color: #193665;
 }
 
 .service-card .price {
     font-size: 18px;
     font-weight: bold;
-    color: #ff66b2;
+    color: #008ad9;
     margin-top: auto; /* Push price to bottom */
     margin-bottom: 0;
     transition: all 0.3s ease;
@@ -434,8 +434,8 @@
 }
 
 .service-card:hover button {
-    background-color: #ff4da6;
-    border-color: #ff4da6;
+    background-color: #193665;
+    border-color: #193665;
     box-shadow: 0 5px 10px rgba(255, 102, 178, 0.3);
 }
 
@@ -457,7 +457,7 @@
 }
 
 .appointment-section .ant-form-item-label > label {
-    color: #ff66b2;
+    color: #008ad9;
     font-weight: 500;
 }
 
@@ -472,13 +472,13 @@
 .appointment-section .ant-input:hover,
 .appointment-section .ant-picker:hover,
 .appointment-section .ant-select-selector:hover {
-    border-color: #ff99cc;
+    border-color: #193665;
 }
 
 .appointment-section .ant-input:focus,
 .appointment-section .ant-picker-focused,
 .appointment-section .ant-select-focused .ant-select-selector {
-    border-color: #ff66b2;
+    border-color: #008ad9;
     box-shadow: 0 0 0 2px rgba(255, 102, 178, 0.2);
 }
 
@@ -512,7 +512,7 @@
 }
 
 .contact-section h4 {
-    color: #ff66b2;
+    color: #008ad9;
     margin-top: 20px;
     margin-bottom: 15px;
     position: relative;
@@ -526,7 +526,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: linear-gradient(to right, #ff66b2, #ff99cc);
+    background: linear-gradient(to right, #008ad9, #193665);
     border-radius: 3px;
 }
 
@@ -569,7 +569,7 @@
 
 .ant-divider-inner-text {
     font-size: 24px;
-    color: #ff66b2;
+    color: #008ad9;
     padding: 0 20px;
     position: relative;
 }
@@ -579,7 +579,7 @@
     content: '✿';
     position: absolute;
     font-size: 16px;
-    color: #ff99cc;
+    color: #193665;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -629,7 +629,7 @@
 
 /* Custom Button Styling */
 .ant-btn-primary {
-    background: linear-gradient(to right, #ff66b2, #ff99cc);
+    background: linear-gradient(to right, #008ad9, #193665);
     border: none;
     position: relative;
     z-index: 1;
@@ -643,7 +643,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #ff4da6, #ff66b2);
+    background: linear-gradient(to right, #193665, #008ad9);
     z-index: -1;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -673,12 +673,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ff66b2, #ff99cc);
+    background: linear-gradient(to bottom, #008ad9, #193665);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #ff4da6, #ff66b2);
+    background: linear-gradient(to bottom, #193665, #008ad9);
 }
 
 /* Animated font styles */
@@ -715,7 +715,7 @@ body{
 
 .ant-menu-item-selected{
     color: #fff !important;
-    background-color: #ffccdd !important;
+    background-color: #015f91 !important;
 }
 :where(.css-dev-only-do-not-override-1yacf91).ant-float-btn-primary, .ant-float-btn-body{
     background: linear-gradient(135deg, #ff6b9c 0%, #7366ff 100%) !important;
@@ -1039,7 +1039,7 @@ body{
 }
 
 .collection-header h2 {
-    color: #ff66b2;
+    color: #008ad9;
     margin: 0;
     font-size: 24px;
     font-weight: 600;
@@ -1054,11 +1054,11 @@ body{
     left: 0;
     width: 40px;
     height: 3px;
-    background-color: #ff66b2;
+    background-color: #008ad9;
     border-radius: 2px;
 }
 .view-all-link {
-    color: #ff66b2;
+    color: #008ad9;
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
@@ -1078,19 +1078,19 @@ body{
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #ff66b2;
+    background-color: #008ad9;
     transform: scaleX(1);
     transform-origin: left;
     transition: transform 0.3s ease;
 }
 
 .view-all-link:hover {
-    color: #ff4da6;
+    color: #193665;
 }
 
 .view-all-link:hover::after {
     transform: scaleX(1.1);
-    background-color: #ff4da6;
+    background-color: #193665;
 }
 
 .view-all-link i {
@@ -1141,7 +1141,7 @@ body{
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 102, 178, 0.8);
+    background: rgb(1, 95, 145);
     color: white;
     border: none;
     cursor: pointer;
@@ -1149,16 +1149,16 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    box-shadow: 0 2px 8px rgba(255, 102, 178, 0.3);
+    box-shadow: 0 2px 8px rgb(1, 126, 195);
     transition: all 0.3s ease;
     outline: none;
 }
 
 .custom-arrow:hover,
 .custom-arrow:focus {
-    background: rgba(255, 102, 178, 1);
+    background: rgb(1, 95, 145);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 4px 12px rgba(255, 102, 178, 0.4);
+    box-shadow: 0 4px 12px rgb(1, 95, 145);
 }
 
 .custom-arrow-prev {
@@ -1172,12 +1172,12 @@ body{
 /* Dots Navigation */
 .product-carousel .slick-dots li button:before {
     font-size: 10px;
-    color: #ffccdd;
+    color: #017ec3;
     opacity: 0.8;
 }
 
 .product-carousel .slick-dots li.slick-active button:before {
-    color: #ff66b2;
+    color: #008ad9;
     opacity: 1;
 }
 
@@ -1221,7 +1221,7 @@ body{
     position: absolute;
     top: 10px;
     left: 10px;
-    background: rgba(255, 102, 178, 0.85);
+    background: rgb(1, 95, 145);
     color: white;
     padding: 4px 8px;
     border-radius: 4px;
@@ -1233,7 +1233,7 @@ body{
 }
 
 .service-card:hover .collection-tag {
-    background: rgba(255, 102, 178, 0.95);
+    background: rgb(1, 95, 145);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -1246,14 +1246,14 @@ body{
 }
 
 .service-card .ant-card-meta-title {
-    color: #ff66b2;
+    color: #008ad9;
     font-size: 18px;
     transition: color 0.3s ease;
     margin-bottom: 5px;
 }
 
 .service-card:hover .ant-card-meta-title {
-    color: #ff4da6;
+    color: #193665;
 }
 
 .service-card .ant-card-meta-description {
@@ -1270,7 +1270,7 @@ body{
 .service-card .price {
     font-size: 18px;
     font-weight: bold;
-    color: #ff66b2;
+    color: #008ad9;
     margin-top: auto;
     margin-bottom: 10px;
     transition: all 0.3s ease;
@@ -1288,14 +1288,14 @@ body{
     padding: 0 25px;
     border-radius: 6px;
     transition: all 0.3s ease;
-    background: linear-gradient(to right, #ff66b2, #ff99cc);
+    background: linear-gradient(to right, #008ad9, #193665);
     border: none;
 }
 
 .collection-container .ant-btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(255, 102, 178, 0.3);
-    background: linear-gradient(to right, #ff4da6, #ff66b2);
+    box-shadow: 0 8px 15px rgb(1, 95, 145);
+    background: linear-gradient(to right, #193665, #008ad9);
 }
 
 /* Mobile-specific styles */
@@ -1348,10 +1348,10 @@ body{
     }
 
     .ant-carousel .slick-dots li button {
-        background: #ff99cc;
+        background: #193665;
     }
 
     .ant-carousel .slick-dots li.slick-active button {
-        background: #ff66b2;
+        background: #008ad9;
     }
 }

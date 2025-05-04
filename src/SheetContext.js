@@ -13,7 +13,7 @@ export const SheetProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const sheetURL = `https://docs.google.com/spreadsheets/d/1K0M4HdozUqI8bD8iU4H4TmA9lqatSbvqswJcmyYGtsU/gviz/tq?tqx=out:csv&nocache=${new Date().getTime()}`;
+        const sheetURL = `https://docs.google.com/spreadsheets/d/1bGMDPj3fKjp6Ol_VL0y_Gq6zrOQdbQEXiehqRy6G40I/gviz/tq?tqx=out:csv&nocache=${new Date().getTime()}`;
 
         fetch(sheetURL)
             .then((response) => response.text())
@@ -22,6 +22,7 @@ export const SheetProvider = ({ children }) => {
                     header: true,
                     skipEmptyLines: true,
                     complete: (result) => {
+                        console.log("result", result);
                         const transformedData = result.data.map((row) => ({
                             ...row,
                             Image1: convertGoogleDriveLink(row.Image1), // ✅ Gọi hàm khi nó đã được khai báo trước đó

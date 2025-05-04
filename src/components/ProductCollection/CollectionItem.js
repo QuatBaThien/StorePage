@@ -23,9 +23,9 @@ const CollectionItem = ({ product, collectionName, onClick }) => {
                         (product.Description.length > 60 ?
                             `${product.Description.substring(0, 60)}...` :
                             product.Description) :
-                        'Beautiful press-on nails design'}
+                        ''}
                 />
-                <div className="price">{formatPrice(product?.Price)}$</div>
+                <div className="price">{product?.Price} VNĐ</div>
             </Card>
         </div>
     );

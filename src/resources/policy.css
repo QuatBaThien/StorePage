@@ -8,7 +8,7 @@
 .page-header {
     text-align: center;
     margin-bottom: 40px;
-    background: linear-gradient(135deg, #ff66b2, #ff99cc);
+    background: linear-gradient(135deg, #008ad9, #015f91);
     padding: 40px 20px;
     border-radius: 12px;
     color: white;
@@ -93,7 +93,7 @@
     top: 0;
     width: 20px;
     height: 20px;
-    background: #ff66b2;
+    background: #008ad9;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -114,7 +114,7 @@
 
 /* Icon Styles */
  .section-card .anticon {
-    color: #ff66b2;
+    color: #008ad9;
 }
 
 /* Responsive Styles */
@@ -164,17 +164,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ff99cc;
+    background: #015f91;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ff66b2;
+    background: #008ad9;
 }
 
 /* Hover Effects */
 .ant-collapse-header:hover {
-    color: #ff66b2;
+    color: #008ad9;
 }
 
 .ant-timeline-item:hover .anticon {

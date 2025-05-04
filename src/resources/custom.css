@@ -5,7 +5,7 @@
 @import "policy.css";
 @import "messenger.css";
 .main-header {
-    background: linear-gradient(45deg, #e35e9f , #e35e9f );
+    background: linear-gradient(45deg, #017ec3, #017ec3 );
     padding: 0;
     position: sticky;
     top: 0;
@@ -86,7 +86,9 @@
     .desktop-menu {
         display: none;
     }
-
+    .desktop-language-switcher {
+        display: none !important;
+    }
     .mobile-menu-button {
         display: block;
     }
@@ -102,7 +104,7 @@
 }
 /* MainFooter.css */
 .main-footer {
-    background: linear-gradient(45deg, #ff66b2, #ff99cc);
+    background: linear-gradient(45deg, #008ad9, #017ec3);
     padding: 40px 0 20px;
     color: white;
 }
@@ -264,7 +266,7 @@
 
 .announcement-container {
     width: 100%;
-    background: #ff66b2;
+    background: #008ad9;
     overflow: hidden;
     padding: 10px 0;
     margin-bottom: 20px;

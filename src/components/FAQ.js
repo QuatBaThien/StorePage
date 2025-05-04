@@ -15,7 +15,7 @@ const FAQPage = () => {
             key: 'orders',
             icon: <ShoppingOutlined/>,
             title: 'Orders & Products',
-            color: '#ff66b2',
+            color: '#008ad9',
             questions: [
                 {
                     q: 'What comes in the package?',

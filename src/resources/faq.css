@@ -9,7 +9,7 @@
     text-align: center;
     padding: 40px 20px;
     margin-bottom: 24px;
-    background: linear-gradient(135deg, #ff66b2, #ff99cc);
+    background: linear-gradient(135deg, #008ad9, #008ad9);
     border-radius: 12px;
     color: white;
     box-shadow: 0 4px 15px rgba(255, 102, 178, 0.2);
@@ -142,8 +142,8 @@
     padding: 0 32px;
     font-size: 16px;
     border-radius: 24px;
-    background: #ff66b2;
-    border-color: #ff66b2;
+    background: #008ad9;
+    border-color: #008ad9;
     transition: all 0.3s ease;
 }
 

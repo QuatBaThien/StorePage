@@ -134,10 +134,10 @@ const RelatedProducts = ({ currentProduct, products }) => {
                                     <div className="product-price">
                                         {product.originalPrice && (
                                             <Text delete type="secondary">
-                                                ${product.originalPrice}
+                                                {product.originalPrice} VNĐ
                                             </Text>
                                         )}
-                                        <Text strong>${product.price}</Text>
+                                        <Text strong>{product.price} VNĐ</Text>
                                     </div>
                                 </Card>
                                 {/*<Button*/}

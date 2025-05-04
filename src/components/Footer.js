@@ -9,23 +9,24 @@ import {
     PhoneOutlined,
     EnvironmentOutlined
 } from '@ant-design/icons';
+import {useTranslation} from "react-i18next";
 
 const { Footer } = Layout;
 const { Title, Text, Paragraph } = Typography;
 
 const MainFooter = () => {
+    const { t, i18n } = useTranslation();
     return (
         <Footer className="main-footer">
             <div className="footer-content">
                 <Row gutter={[24, 24]}>
                     <Col xs={24} sm={12} md={6}>
                         <div className="footer-section">
-                            <div className="footer-logo">
-                                <img src="/LeVALogo-slogan-E-PINK-1.png" alt="Luxury Nails Spa Logo" style={{ width: "100%", height: "100%" }} />
-                                {/*<span>LeVa Press-on Nails</span>*/}
+                            <div className="logo">
+                                <img src="/logo.jpg" alt="tong kho qi qi ang" style={{ width: "100%", height: "100%" }} />
                             </div>
                             <Paragraph className="footer-description">
-                                Your destination for premium nail care services and products.
+                                {t('shop_footer')}
                             </Paragraph>
                             <Space className="social-links">
                                 <a href="https://www.instagram.com/leva_press/"><InstagramOutlined /></a>
@@ -37,43 +38,40 @@ const MainFooter = () => {
 
                     <Col xs={24} sm={12} md={6}>
                         <div className="footer-section">
-                            <Title level={4}>Quick Links</Title>
+                            <Title level={4}>{t('quick_link')}</Title>
                             <ul className="footer-links">
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/products">Products</Link></li>
+                                <li><Link to="/">{t('home')}</Link></li>
+                                <li><Link to="/products">{t('products')}</Link></li>
                             </ul>
                         </div>
                     </Col>
 
                     <Col xs={24} sm={12} md={6}>
                         <div className="footer-section">
-                            <Title level={4}>Customer Service</Title>
+                            <Title level={4}>{t('more_info')}</Title>
                             <ul className="footer-links">
-                                <li><Link to="/faq"><i className="fa-solid fa-message"></i> FAQ</Link></li>
-                                <li><Link to="/policy"><i className="fas fa-shipping-fast"></i> Policy</Link>
+                                <li><Link to="/policy"><i className="fas fa-shipping-fast"></i> {t('policy')}</Link>
                                 </li>
-                                <li><Link to="/guide"><i className="fas fa-book"></i> Guide</Link></li>
                             </ul>
                         </div>
                     </Col>
 
                     <Col xs={24} sm={12} md={6}>
                         <div className="footer-section">
-                            <Title level={4} className="white-text">Contact Info</Title>
+                            <Title level={4} className="white-text">{t('contact')}</Title>
                             <ul className="contact-info">
                                 <li>
-                                    <EnvironmentOutlined className="white-text" />
                                     <Text className="white-text">
-                                        5100 Erin Mills Pky Mississauga <br /> L5M 4Z5 Canada
+                                        {t('hanoi')} <br /> {t('hanoi_diachi')} <br /> {t('hanoi_phone')}
                                     </Text>
                                 </li>
                                 <li>
-                                    <PhoneOutlined className="white-text" />
-                                    <Text className="white-text">289 204 2333</Text>
+                                    <Text className="white-text">
+                                        {t('hochiminh')} <br /> {t('hcm_diachi')} <br /> {t('hcm_phone')}
+                                    </Text>
                                 </li>
                                 <li>
-                                    <MailOutlined className="white-text" />
-                                    <Text className="white-text">Levanailsart@gmail.com</Text>
+                                    <Text className="white-text">Email: phuongkhoi135@gmail.com</Text>
                                 </li>
                             </ul>
                         </div>
@@ -83,7 +81,7 @@ const MainFooter = () => {
 
                 <div className="footer-bottom">
                     <Text className="copyright">
-                        © {new Date().getFullYear()} LeVa Press-on Nails. All rights reserved.
+                        © {new Date().getFullYear()} QI QIANG VIET NAM. All rights reserved.
                     </Text>
                 </div>
             </div>

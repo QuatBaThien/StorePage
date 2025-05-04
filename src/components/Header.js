@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Drawer, Layout, Menu, Dropdown } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
     HomeOutlined,
     MenuOutlined,
@@ -14,66 +15,39 @@ const { SubMenu } = Menu;
 const MainHeader = () => {
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
     const location = useLocation();
+    const { t, i18n } = useTranslation();
 
-    // Collections for the dropdown
-    const collections = [
-        { key: 'new', label: 'New Arrivals' },
-        { key: 'spring', label: 'Spring Collection' },
-        { key: 'tools', label: "Tools & Accessories" },
-        // { key: 'summer', label: 'Summer Collection' },
-        // { key: 'autumn', label: 'Autumn Collection' },
-        // { key: 'winter', label: 'Winter Collection' },
-    ];
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    };
 
-    // Other menu items
+    const languageMenu = (
+        <Menu>
+            <Menu.Item key="vi" onClick={() => changeLanguage('vi')}>
+                🇻🇳 Tiếng Việt
+            </Menu.Item>
+            <Menu.Item key="zh" onClick={() => changeLanguage('zh')}>
+                🇨🇳 中文
+            </Menu.Item>
+        </Menu>
+    );
+
+
     const menuItems = [
-        {
-            key: '/',
-            icon: <HomeOutlined />,
-            label: 'Home',
-        },
-        {
-            key: '/care-guide',
-            icon: <i className="fas fa-heart"></i>,
-            label: 'Care guide',
-        },
-        {
-            key: '/size-guide',
-            icon: <i className="fas fa-ruler"></i>,
-            label: 'Size guide',
-        },
-        {
-            key: '/policy',
-            icon: <i className="fas fa-shipping-fast"></i>,
-            label: 'Policy',
-        },
-        {
-            key: '/faq',
-            icon: <i className="fa-solid fa-message"></i>,
-            label: 'FAQ',
-        },
-        {
-            key: '/about',
-            icon: <i className="fas fa-user-circle"></i>,
-            label: 'About Us',
-        },
+        { key: '/', icon: <HomeOutlined />, label: t('home') },
+        { key: '/policy', icon: <i className="fas fa-shipping-fast" />, label: t('policy') },
+        { key: '/about', icon: <i className="fas fa-user-circle" />, label: t('about') },
     ];
-
 
     return (
-
         <Header className="main-header">
             <div className="header-content">
                 <Link to="/" className="logo">
-                    <img src="/levalogotrans.png" alt="LeVa Press-on Nails Logo" style={{
-                        width: "auto",
-                        maxWidth: "200px",
-                        objectFit: "contain"
-                    }}  />
-                    <span>LeVa Press-on Nails</span>
+                    <span>{t('shop_name')}</span>
                 </Link>
 
-                {/* Mobile menu button */}
+
+                {/* Mobile Menu Button */}
                 <Button
                     className="mobile-menu-button"
                     type="primary"
@@ -88,32 +62,13 @@ const MainHeader = () => {
                     selectedKeys={[location.pathname]}
                     className="desktop-menu"
                 >
-                    {/* Home Menu Item */}
                     <Menu.Item key="/" icon={<HomeOutlined />}>
-                        <Link to="/">Home</Link>
+                        <Link to="/">{t('home')}</Link>
+                    </Menu.Item>
+                    <Menu.Item key="/products" icon={<ShoppingOutlined />}>
+                        <Link to="/products">{t('products')}</Link>
                     </Menu.Item>
 
-                    {/* Products Dropdown */}
-                    <SubMenu
-                        key="/products"
-                        icon={<ShoppingOutlined />}
-                        title="Products"
-                        className={location.pathname.startsWith('/products') ? 'ant-menu-item-selected' : ''}
-                    >
-                        <Menu.Item key="/products">
-                            <Link to="/products">All Products</Link>
-                        </Menu.Item>
-                        <Menu.Divider />
-                        {collections.map(collection => (
-                            <Menu.Item key={`/products/${collection.key}`}>
-                                <Link to={`/products?collection=${collection.key}`}>
-                                    {collection.label}
-                                </Link>
-                            </Menu.Item>
-                        ))}
-                    </SubMenu>
-
-                    {/* Other Menu Items */}
                     {menuItems.slice(1).map(item => (
                         <Menu.Item key={item.key} icon={item.icon}>
                             <Link to={item.key}>{item.label}</Link>
@@ -123,41 +78,31 @@ const MainHeader = () => {
 
                 {/* Mobile Menu Drawer */}
                 <Drawer
-                    title="Menu"
+                    title={
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <span>{t('home')} Menu</span>
+                            {/* Language Switcher in Mobile */}
+                            <Dropdown overlay={languageMenu}>
+                                <Button size="small" icon={<DownOutlined />}>
+                                    {i18n.language === 'vi' ? '🇻🇳' : '🇨🇳'}
+                                </Button>
+                            </Dropdown>
+                        </div>
+                    }
                     placement="right"
                     onClose={() => setMobileMenuVisible(false)}
                     open={mobileMenuVisible}
                     className="mobile-menu-drawer"
                 >
                     <Menu mode="inline" selectedKeys={[location.pathname]}>
-                        {/* Home Item */}
                         <Menu.Item key="/" icon={<HomeOutlined />}>
-                            <Link to="/" onClick={() => setMobileMenuVisible(false)}>
-                                Home
-                            </Link>
+                            <Link to="/" onClick={() => setMobileMenuVisible(false)}>{t('home')}</Link>
                         </Menu.Item>
 
-                        {/* Products Dropdown in Mobile */}
-                        <SubMenu key="/products" icon={<ShoppingOutlined />} title="Products">
-                            <Menu.Item key="/products">
-                                <Link to="/products" onClick={() => setMobileMenuVisible(false)}>
-                                    All Products
-                                </Link>
-                            </Menu.Item>
-                            <Menu.Divider />
-                            {collections.map(collection => (
-                                <Menu.Item key={`/products/${collection.key}`}>
-                                    <Link
-                                        to={`/products?collection=${collection.key}`}
-                                        onClick={() => setMobileMenuVisible(false)}
-                                    >
-                                        {collection.label}
-                                    </Link>
-                                </Menu.Item>
-                            ))}
-                        </SubMenu>
+                        <Menu.Item key="/products" icon={<ShoppingOutlined />}>
+                            <Link to="/products">{t('products')}</Link>
+                        </Menu.Item>
 
-                        {/* Other Menu Items */}
                         {menuItems.slice(1).map(item => (
                             <Menu.Item key={item.key} icon={item.icon}>
                                 <Link to={item.key} onClick={() => setMobileMenuVisible(false)}>
@@ -167,6 +112,14 @@ const MainHeader = () => {
                         ))}
                     </Menu>
                 </Drawer>
+                {/* Language Switcher (Desktop) */}
+                <div className="desktop-language-switcher" style={{ marginLeft: 'auto', marginRight: 16 }}>
+                    <Dropdown overlay={languageMenu}>
+                        <Button icon={<DownOutlined />}>
+                            {i18n.language === 'vi' ? '🇻🇳 Tiếng Việt' : '🇨🇳 中文'}
+                        </Button>
+                    </Dropdown>
+                </div>
             </div>
         </Header>
     );

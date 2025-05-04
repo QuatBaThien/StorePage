@@ -124,7 +124,7 @@
 }
 
 .size-notes h5 {
-    color: #ff66b2;
+    color: #008ad9;
     margin-bottom: 12px;
 }
 
@@ -154,12 +154,12 @@
 }
 
 .size-guide-drawer .ant-drawer-body::-webkit-scrollbar-thumb {
-    background: #ff99cc;
+    background: #017ec3;
     border-radius: 3px;
 }
 
 .size-guide-drawer .ant-drawer-body::-webkit-scrollbar-thumb:hover {
-    background: #ff66b2;
+    background: #015f91;
 }
 
 /* Responsive */

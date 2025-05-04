@@ -3,6 +3,7 @@ import {Breadcrumb, Card, Col, Divider, Empty, Input, Layout, Pagination, Row, S
 import {HomeOutlined, SearchOutlined} from '@ant-design/icons';
 import {useLocation, useNavigate} from "react-router-dom";
 import {SheetContext} from "../SheetContext";
+import {useTranslation} from "react-i18next";
 
 const {Header, Content} = Layout;
 const {Option} = Select;
@@ -14,6 +15,7 @@ const NewArrivals = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const collectionFromUrl = queryParams.get('collection');
+    const { t, i18n } = useTranslation();
     const {data: sheetProducts} = useContext(SheetContext);
     const normalizeCollection = (collection) => {
         return collection
@@ -28,7 +30,6 @@ const NewArrivals = () => {
 
 
     const allProducts = useMemo(() => {
-        // console.log(sheetProducts)
         return sheetProducts.map((service, index) => ({
             id: `sheet-${index}`,
             name: service.Name,
@@ -47,16 +48,14 @@ const NewArrivals = () => {
             collection: normalizeCollection(service.Collections || 'all'),
             size: service.Size,
             shape: service.Shape,
+            product_Info: service.Product_Info,
+            how_to_use:service.How_to_use,
         }));
     }, [sheetProducts]);
     const collections = [
-        {value: 'all', label: 'All Collections'},
-        {value: 'new', label: 'New Arrivals'},
-        { value: 'spring', label: 'Spring Collection' },
-        {value: 'tools', label: "Tools & Accessories"},
-        // { value: 'summer', label: 'Summer Collection' },
-        // { value: 'autumn', label: 'Autumn Collection' },
-        // { value: 'winter', label: 'Winter Collection' },
+        {value: 'all', label: t('allProducts')},
+        {value: 'qi', label: t('qi_qiang')},
+        {value: 'orther', label: t('orther_product')},
     ];
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -170,19 +169,19 @@ const NewArrivals = () => {
                 <Breadcrumb className="breadcrumb">
                     <Breadcrumb.Item href="/">
                         <HomeOutlined/>
-                        <span>Home</span>
+                        <span>{t('home')}</span>
                     </Breadcrumb.Item>
-                    <Breadcrumb.Item>Products</Breadcrumb.Item>
+                    <Breadcrumb.Item>{t('products')}</Breadcrumb.Item>
                     {selectedCollection !== 'all' && (
                         <Breadcrumb.Item>{currentCollectionName}</Breadcrumb.Item>
                     )}
                 </Breadcrumb>
-                <Divider orientation="center" id="services-section">Products</Divider>
+                <Divider orientation="center" id="services-section">{t('products')}</Divider>
                 <div className="filters-section">
                     <Row gutter={[24, 24]} align="middle" justify="space-between">
                         <Col xs={24} sm={12} md={8} lg={6}>
                             <Search
-                                placeholder="Search products..."
+                                placeholder={t('search_product')}
                                 prefix={<SearchOutlined/>}
                                 className="search-input"
                                 allowClear
@@ -192,7 +191,7 @@ const NewArrivals = () => {
                         </Col>
                         <Col xs={24} sm={12} md={8} lg={6}>
                             <div className="sort-section">
-                                <Text>Collection: </Text>
+                                <Text>{t('collection')}:</Text>
                                 <Select
                                     value={selectedCollection}
                                     onChange={handleCollectionChange}
@@ -209,16 +208,16 @@ const NewArrivals = () => {
                         </Col>
                         <Col xs={24} sm={12} md={8} lg={6}>
                             <div className="sort-section">
-                                <Text>Sort by: </Text>
+                                <Text>{t('filter')}</Text>
                                 <Select
                                     value={sortBy}
                                     onChange={handleSort}
                                     className="sort-select"
                                 >
-                                    <Option value="a-z">Name: A to Z</Option>
-                                    <Option value="z-a">Name: Z to A</Option>
-                                    <Option value="price-low">Price: Low to High</Option>
-                                    <Option value="price-high">Price: High to Low</Option>
+                                    <Option value="a-z">{t('a-z')}</Option>
+                                    <Option value="z-a">{t('z-a')}</Option>
+                                    <Option value="price-low">{t('price-low')}</Option>
+                                    <Option value="price-high">{t('price-high')}</Option>
                                 </Select>
                             </div>
                         </Col>
@@ -259,9 +258,8 @@ const NewArrivals = () => {
                                             <Title level={5} className="product-name">{product.name}</Title>
                                             {product.collection && (
                                                 <Text className="product-collection">
-                                                    {product?.collection === 'new' ? 'New Arrivals' :
-                                                        product?.collection === 'tools' ? 'Tools & Accessories' :
-                                                            product?.collection === 'spring' ? 'Spring Collection' :
+                                                    {product?.collection === 'qi' ? t('qi_qiang') :
+                                                        product?.collection === 'orther' ? t('orther_product') :
                                                                 product?.collection}
                                                 </Text>
                                             )}
@@ -280,11 +278,11 @@ const NewArrivals = () => {
                                             <div className="product-price">
                                                 {product.originalPrice && (
                                                     <Text delete type="secondary" className="original-price">
-                                                        ${product.originalPrice}
+                                                        {product.originalPrice} VNĐ
                                                     </Text>
                                                 )}
                                                 <Text strong className="current-price">
-                                                    ${product.price}
+                                                    {product.price} VNĐ
                                                 </Text>
                                             </div>
                                         </div>
@@ -304,7 +302,7 @@ const NewArrivals = () => {
                                 onChange={handlePageChange}
                                 showSizeChanger={false}
                                 showQuickJumper
-                                showTotal={(total) => `Total ${total} items`}
+                                showTotal={(total) => `${t('sum')} ${total} ${t('product')}`}
                             />
                         </div>
                     </div>
