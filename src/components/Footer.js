@@ -23,15 +23,18 @@ const MainFooter = () => {
                     <Col xs={24} sm={12} md={6}>
                         <div className="footer-section">
                             <div className="logo">
-                                <img src="/logo.jpg" alt="tong kho qi qi ang" style={{ width: "100%", height: "100%" }} />
+                                <img src="/logo_qiqiang.png" alt="tong kho qi qi ang" style={{ width: "100%", height: "100%" }} />
                             </div>
                             <Paragraph className="footer-description">
                                 {t('shop_footer')}
                             </Paragraph>
                             <Space className="social-links">
-                                <a href="https://www.instagram.com/leva_press/"><InstagramOutlined /></a>
-                                <a href=" https://www.facebook.com/profile.php?id=61572997735327"><FacebookOutlined /></a>
-
+                                <a href="https://zalo.me/0866041318" target="_blank" rel="noopener noreferrer">
+                                    <img src="/zalo.svg" alt="Zalo" style={{width: 24, height: 24}}/>
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=100094043952973" target="_blank" rel="noopener noreferrer">
+                                    <img src="/Facebook.svg" alt="Zalo" style={{width: 24, height: 24}}/>
+                                </a>
                             </Space>
                         </div>
                     </Col>

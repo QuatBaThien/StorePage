@@ -27,11 +27,11 @@ const {Title, Paragraph} = Typography;
 const {Option} = Select;
 
 const Home = () => {
-    const { data } = useContext(SheetContext);
+    const { data } = useContext(SheetContext)
     const { t, i18n } = useTranslation();
     // const topProducts = data ? data.slice(0, 4) : [];
     const newArrivalsCarouselRef = useRef(null);
-    const springCollectionCarouselRef = useRef(null);
+    const ortherProductRef = useRef(null);
     const bestSeller = data ? data.filter(product => product?.Collections === "QI QIANG") : [];
     const ortherProduct = data ? data.filter(product => product?.Collections === "Orther Product") : [];
 
@@ -72,7 +72,7 @@ const Home = () => {
 
 
     const galleryImages = [
-        '/bannerIMG/background.png',
+        '/bannerIMG/jiafu.png',
     ];
     const storeImages = [
         '/bannerIMG/store1.jpg',
@@ -203,13 +203,13 @@ const Home = () => {
                         {galleryImages.map((image, index) => (
                             <div key={index}>
                                 <img src={image} alt={`LeVa Nail Showcase ${index + 1}`}/>
-                                <div className="carousel-content">
-                                    <div style={{textAlign: "center"}}>
-                                        <Button type="primary" size="large" onClick={() => navigate("/products")}>
-                                            {t('shop_now')}
-                                        </Button>
-                                    </div>
-                                </div>
+                                {/*<div className="carousel-content">*/}
+                                {/*    <div style={{textAlign: "center"}}>*/}
+                                {/*        <Button type="primary" size="large" onClick={() => navigate("/products")}>*/}
+                                {/*            {t('shop_now')}*/}
+                                {/*        </Button>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
                             </div>
                         ))}
                     </Carousel>
@@ -230,16 +230,17 @@ const Home = () => {
                 <div className="welcome-section">
                     <Row gutter={[24, 24]} justify="center">
                         <Col xs={24} md={16}>
-                            <Title level={2}>Welcome to LeVa Press-on Nails</Title>
-                            <Paragraph>
-                                Welcome to Leva — your one-stop destination for flawless, effortless beauty! Our premium press-on nails bring salon-quality style right to your
-                                fingertips — no appointments, no hassle.
-                                <br/> Whether you love timeless elegance or bold designs, Leva has the perfect set for every vibe.
+                            {data?.[0] && data?.[1] && (
+                                <>
+                                    <Title level={2}>
+                                        {i18n.language === 'zh' ? data[1].Welcome_hearder : data[0].Welcome_hearder}
+                                    </Title>
+                                    <Paragraph>
+                                        {i18n.language === 'zh' ? data[1].Welcome : data[0].Welcome}
+                                    </Paragraph>
+                                </>
+                            )}
 
-                            </Paragraph>
-                            <Paragraph>
-                                Ready for instant glam? Just press, and you’re polished!
-                            </Paragraph>
                         </Col>
                     </Row>
                 </div>
@@ -309,7 +310,7 @@ const Home = () => {
                                 className="product-carousel"
                                 swipeToSlide={true}
                                 draggable={true}
-                                ref={newArrivalsCarouselRef}
+                                ref={ortherProductRef}
                             >
                                 {ortherProduct.map(product => renderOrtherItem(product))}
                             </Carousel>
@@ -317,14 +318,14 @@ const Home = () => {
                             {/* Custom navigation buttons */}
                             <button
                                 className="custom-arrow custom-arrow-prev"
-                                onClick={() => newArrivalsCarouselRef.current.prev()}
+                                onClick={() => ortherProductRef.current.prev()}
                                 aria-label="Previous slide"
                             >
                                 <i className="fa-solid fa-angle-left"></i>
                             </button>
                             <button
                                 className="custom-arrow custom-arrow-next"
-                                onClick={() => newArrivalsCarouselRef.current.next()}
+                                onClick={() => ortherProductRef.current.next()}
                                 aria-label="Next slide"
                             >
                                 <i className="fa-solid fa-angle-right"></i>

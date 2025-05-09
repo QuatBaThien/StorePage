@@ -1,9 +1,25 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react';
-import {Breadcrumb, Card, Col, Divider, Empty, Input, Layout, Pagination, Row, Select, Typography} from 'antd';
+import {
+    Breadcrumb,
+    Card,
+    Col,
+    Divider,
+    Empty,
+    Input,
+    Layout,
+    Pagination,
+    Row,
+    Select,
+    Typography,
+    Modal,
+    Button,
+    Image, Rate
+} from 'antd';
 import {HomeOutlined, SearchOutlined} from '@ant-design/icons';
 import {useLocation, useNavigate} from "react-router-dom";
 import {SheetContext} from "../SheetContext";
 import {useTranslation} from "react-i18next";
+import Paragraph from "antd/es/skeleton/Paragraph";
 
 const {Header, Content} = Layout;
 const {Option} = Select;
@@ -31,7 +47,7 @@ const NewArrivals = () => {
 
     const allProducts = useMemo(() => {
         return sheetProducts.map((service, index) => ({
-            id: `sheet-${index}`,
+            id: service.STT,
             name: service.Name,
             price: service.Price,
             originalPrice: service.OriginalPrice ? parseFloat(service.OriginalPrice) : undefined,
@@ -41,7 +57,6 @@ const NewArrivals = () => {
             image2: service.Image2, // Ảnh phụ 1
             image3: service.Image3, // Ảnh phụ 2
             image4: service.Image4, // Ảnh phụ 3
-            image5: service.Image5, // Ảnh phụ 4
             description: service.Description, // Mô tả sản phẩm
             discount: service.Discount ? parseInt(service.Discount) : 0,
             isNew: true,
@@ -64,6 +79,9 @@ const NewArrivals = () => {
     const pageSize = 16;
     const navigate = useNavigate();
     const [selectedCollection, setSelectedCollection] = useState(collectionFromUrl || 'all');
+    const [previewProduct, setPreviewProduct] = useState(null);
+    const [showPreviewModal, setShowPreviewModal] = useState(false);
+
 
     useEffect(() => {
         if (collectionFromUrl) {
@@ -155,10 +173,33 @@ const NewArrivals = () => {
                 category: selectedCollection !== 'all'
                     ? collections.find(c => c.value === selectedCollection)?.label
                     : "All Products",
-                recommended: allProducts.slice(0, 4)
             }
         });
     };
+
+    useEffect(() => {
+        const previewId = localStorage.getItem("previewProductId");
+        if (previewId && sheetProducts.length > 0) {
+            const product = allProducts.find(p => String(p.id) === previewId);
+            if (product) {
+                setPreviewProduct(product);
+                setShowPreviewModal(true);
+                localStorage.removeItem("previewProductId");
+            }
+        }
+    }, [sheetProducts, allProducts]);
+
+    const handleViewDetail = () => {
+        if (previewProduct) {
+            navigate(`/products/${previewProduct.id}`, {
+                state: {
+                    product: previewProduct,
+                    products: paginatedProducts,
+                }
+            });
+        }
+    };
+
     const currentCollectionName = useMemo(() => {
         const collection = collections.find(c => c.value === selectedCollection);
         return collection ? collection.label : 'All Collections';
@@ -243,9 +284,6 @@ const NewArrivals = () => {
                                                 {product.discount && (
                                                     <div className="discount-badge">-{product.discount}%</div>
                                                 )}
-                                                {product.isNew && (
-                                                    <div className="new-badge">NEW</div>
-                                                )}
                                                 <div className="product-actions">
                                                     {/*<Button type="primary" icon={<ShoppingCartOutlined/>}/>*/}
                                                     {/*<Button icon={<HeartOutlined/>}/>*/}
@@ -260,7 +298,7 @@ const NewArrivals = () => {
                                                 <Text className="product-collection">
                                                     {product?.collection === 'qi' ? t('qi_qiang') :
                                                         product?.collection === 'orther' ? t('orther_product') :
-                                                                product?.collection}
+                                                            product?.collection}
                                                 </Text>
                                             )}
 
@@ -308,6 +346,106 @@ const NewArrivals = () => {
                     </div>
                 )}
             </Content>
+            <Modal
+                open={showPreviewModal}
+                onCancel={() => setShowPreviewModal(false)}
+                footer={[
+                    <Button key="close" onClick={() => setShowPreviewModal(false)}>
+                        Đóng
+                    </Button>,
+                    <Button key="view" type="primary" onClick={handleViewDetail}>
+                        Xem chi tiết
+                    </Button>
+                ]}
+                title={previewProduct?.name}
+                width={900}
+            >
+                {previewProduct && (
+                    <div className="product-main">
+                        <Row gutter={[48, 24]}>
+                            {/* Product Images */}
+                            <Col xs={24} md={12}>
+                                <div className="product-images">
+                                    <Image.PreviewGroup>
+                                        <Image
+                                            src={previewProduct.image}
+                                            alt={previewProduct.name}
+                                            className="main-image"
+                                        />
+                                        <div className="thumbnail-images">
+                                            {[previewProduct.image2, previewProduct.image3, previewProduct.image4]
+                                                .filter(Boolean)
+                                                .map((img, index) => (
+                                                    <Image
+                                                        key={index}
+                                                        src={img}
+                                                        alt={`${previewProduct.name} - ${index + 1}`}
+                                                        className="thumbnail"
+                                                        width={200}
+                                                        height={150}
+                                                    />
+                                                ))}
+                                        </div>
+                                    </Image.PreviewGroup>
+                                </div>
+                            </Col>
+
+                            {/* Product Info */}
+                            <Col xs={24} md={12}>
+                                <div className="product-info-detail">
+                                    <Title level={4}>{previewProduct.name}</Title>
+
+                                    <div className="product-rating-detail">
+                                        <Rate
+                                            disabled
+                                            defaultValue={
+                                                previewProduct.rating === 0 ? 5 : previewProduct.rating
+                                            }
+                                            size="small"
+                                        />
+                                    </div>
+
+                                    <div className="product-price-detail" style={{ marginTop: 12 }}>
+                                        <Text className="current-price">
+                                            {previewProduct.price} VNĐ
+                                        </Text>
+                                    </div>
+                                    <Divider />
+
+                                    <Text className="product-description">
+                                        {previewProduct.description}
+                                    </Text>
+
+                                    <div className="order-buttons" style={{ marginTop: 12 }}>
+                                        <Button
+                                            type="primary"
+                                            shape="round"
+                                            size="large"
+                                            href="tel:0866041318"
+                                            style={{ marginRight: '12px' }}
+                                        >
+                                            {t('order_product')}
+                                        </Button>
+
+                                        <Button
+                                            type="default"
+                                            shape="round"
+                                            size="large"
+                                            href="https://zalo.me/0866041318"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {t('order_zalo')}
+                                        </Button>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                )}
+            </Modal>
+
+
         </Layout>
     );
 };

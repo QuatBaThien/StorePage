@@ -22,15 +22,13 @@ export const SheetProvider = ({ children }) => {
                     header: true,
                     skipEmptyLines: true,
                     complete: (result) => {
-                        console.log("result", result);
                         const transformedData = result.data.map((row) => ({
                             ...row,
-                            Image1: convertGoogleDriveLink(row.Image1), // ✅ Gọi hàm khi nó đã được khai báo trước đó
+                            Image1: convertGoogleDriveLink(row.Image1),
                             Image2: convertGoogleDriveLink(row.Image2),
                             Image3: convertGoogleDriveLink(row.Image3),
                             Image4: convertGoogleDriveLink(row.Image4),
-                            Image5: convertGoogleDriveLink(row.Image5),
-
+                            Image_bia: convertGoogleDriveLink(row.Image_bia),
                         }));
                         setData(transformedData);
                     },

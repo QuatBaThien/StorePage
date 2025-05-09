@@ -1,7 +1,7 @@
 // AppLayout.jsx
 import React, {useEffect, useState} from 'react';
 import {FloatButton, Layout} from 'antd';
-import {BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
