@@ -348,8 +348,8 @@ const Home = () => {
 
                                 <Title level={4}>{t('hochiminh')}</Title>
                                 <Paragraph>
-                                    {t('hanoi_diachi')}<br/>
-                                    {t('hanoi_phone')}<br/>
+                                    {t('hcm_diachi')}<br/>
+                                    {t('hcm_phone')}<br/>
                                 </Paragraph>
 
                             </Card>

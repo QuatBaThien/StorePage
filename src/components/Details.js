@@ -49,7 +49,7 @@ const ProductDetail = () => {
         });
     }, [product]);
 
-    if (!product && sheetProducts.length === 0) {
+    if (!product) {
         return <div>Loading...</div>; // chờ dữ liệu context
     }
     if (!product) {
