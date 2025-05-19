@@ -167,7 +167,7 @@ const Home = () => {
             key={product.No}
             product={product}
             collectionName="Best Seller"
-            onClick={() => navigate("/products?collection=qi")}
+            onClick={() => navigate(`/products/${product.STT}`)}
         />
     );
     const renderOrtherItem = (product) => (
@@ -175,7 +175,7 @@ const Home = () => {
             key={product.No}
             product={product}
             collectionName="Orther Product"
-            onClick={() => navigate("/products?collection=orther")}
+            onClick={() => navigate(`/products/${product.STT}`)}
         />
     );
 
