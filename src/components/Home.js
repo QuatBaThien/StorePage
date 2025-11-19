@@ -72,7 +72,7 @@ const Home = () => {
 
 
     const galleryImages = [
-        '/bannerIMG/jiafu.png',
+        '/bannerIMG/benfu.jpeg',
     ];
     const storeImages = [
         '/bannerIMG/store1.jpg',

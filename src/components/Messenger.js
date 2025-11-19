@@ -28,7 +28,7 @@ const CustomChatBox = () => {
                                 <img src={`/logo_qiqiang.png`} alt="Qiqiang Logo" className="chat-logo" />
                             </div>
                             <div className="header-text">
-                                <h4>JIA FU <Badge status="success" /></h4>
+                                <h4>BEN FU <Badge status="success" /></h4>
                                 <p style={{fontStyle:'italic'}}>{t('mess_detail')}</p>
                             </div>
                         </div>
