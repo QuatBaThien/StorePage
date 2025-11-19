@@ -13,19 +13,19 @@ const AboutPage = () => {
     const viText = (
         <>
             <Paragraph>
-                <strong>Công ty TNHH Thương Mại JIAFU</strong> tự hào là <strong>tổng đại lý chính thức và độc quyền</strong> phân phối các sản phẩm của thương hiệu <strong>Qi Qiang</strong> tại Việt Nam.
+                <strong>Công ty TNHH Thương Mại BEN FU</strong> tự hào là <strong>tổng đại lý chính thức và độc quyền</strong> phân phối các sản phẩm của thương hiệu <strong>Qi Qiang</strong> tại Việt Nam.
             </Paragraph>
             <Paragraph>
                 📌 Sứ mệnh của chúng tôi là mang đến cho khách hàng trong nước những <strong>giải pháp hóa chất công nghiệp tiên tiến, hiệu quả và an toàn</strong>.
             </Paragraph>
             <Paragraph>
-                ✅ JIAFU cam kết cung cấp <strong>sản phẩm chính hãng, chất lượng vượt trội, đạt tiêu chuẩn quốc tế</strong>.
+                ✅ BEN FU cam kết cung cấp <strong>sản phẩm chính hãng, chất lượng vượt trội, đạt tiêu chuẩn quốc tế</strong>.
             </Paragraph>
             <Paragraph>
                 🌟 Qi Qiang là thương hiệu hàng đầu tại Trung Quốc trong lĩnh vực <strong>hóa chất phục vụ sản xuất khuôn mẫu, công nghiệp nhẹ và nặng</strong>, với dây chuyền sản xuất hiện đại, ứng dụng công nghệ từ Đức và Mỹ, đạt các chứng nhận ISO9001 và ISO14001.
             </Paragraph>
             <Paragraph>
-                🇻🇳 Tại Việt Nam, JIAFU không chỉ là nhà phân phối, mà còn là <strong>đối tác đáng tin cậy</strong>, đồng hành cùng doanh nghiệp tối ưu quy trình sản xuất và nâng cao hiệu quả vận hành.
+                🇻🇳 Tại Việt Nam, BEN FU không chỉ là nhà phân phối, mà còn là <strong>đối tác đáng tin cậy</strong>, đồng hành cùng doanh nghiệp tối ưu quy trình sản xuất và nâng cao hiệu quả vận hành.
             </Paragraph>
             <Paragraph>
                 🔧 Hệ sinh thái sản phẩm đa dạng bao gồm:<br />
@@ -43,7 +43,7 @@ const AboutPage = () => {
                 🏬 Hàng luôn có sẵn tại kho Hà Nội và TP.HCM
             </Paragraph>
             <Paragraph>
-                📞 <strong>Liên hệ với JIAFU để được tư vấn và đặt hàng:</strong><br />
+                📞 <strong>Liên hệ với BEN FU để được tư vấn và đặt hàng:</strong><br />
                 📍 Hà Nội: 0866.041.318 – 0399.174.611<br />
                 📍 TP.HCM: 0398.951.213 – 0368.806.983
             </Paragraph>
@@ -53,19 +53,19 @@ const AboutPage = () => {
     const zhText = (
         <>
             <Paragraph>
-                <strong>JIAFU 商贸有限责任公司</strong> 自豪地成为 <strong>Qi Qiang 品牌</strong> 在越南的 <strong>官方唯一总代理</strong>。
+                <strong>BEN FU 商贸有限责任公司</strong> 自豪地成为 <strong>Qi Qiang 品牌</strong> 在越南的 <strong>官方唯一总代理</strong>。
             </Paragraph>
             <Paragraph>
                 📌 我们的使命是为国内客户提供 <strong>先进、高效且安全的工业化学解决方案</strong>。
             </Paragraph>
             <Paragraph>
-                ✅ JIAFU 承诺只提供 <strong>正品保障、品质卓越、符合国际标准</strong> 的产品。
+                ✅ BEN FU 承诺只提供 <strong>正品保障、品质卓越、符合国际标准</strong> 的产品。
             </Paragraph>
             <Paragraph>
                 🌟 Qi Qiang 是中国在 <strong>模具制造、轻工业与重工业化工领域</strong> 的领先品牌，拥有现代化的生产线，应用德国与美国技术，并获得 ISO9001 与 ISO14001 认证。
             </Paragraph>
             <Paragraph>
-                🇻🇳 在越南，JIAFU 不仅是分销商，更是 <strong>值得信赖的合作伙伴</strong>，与企业一同优化生产流程，提升运营效率。
+                🇻🇳 在越南，BEN FU 不仅是分销商，更是 <strong>值得信赖的合作伙伴</strong>，与企业一同优化生产流程，提升运营效率。
             </Paragraph>
             <Paragraph>
                 🔧 我们的产品生态系统多样，涵盖：<br />
@@ -83,7 +83,7 @@ const AboutPage = () => {
                 🏬 河内与胡志明市常备现货库存
             </Paragraph>
             <Paragraph>
-                📞 <strong>请联系 JIAFU 获取咨询与下单服务：</strong><br />
+                📞 <strong>请联系 BEN FU 获取咨询与下单服务：</strong><br />
                 📍 河内：0866.041.318 – 0399.174.611<br />
                 📍 胡志明市：0398.951.213 – 0368.806.983
             </Paragraph>
